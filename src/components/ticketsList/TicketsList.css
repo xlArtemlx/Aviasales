@@ -1,0 +1,5 @@
+.box {
+    flex-direction: column;
+    margin: 10px;
+    display: flex;
+}

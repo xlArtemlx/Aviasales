@@ -1,0 +1,32 @@
+.text-exCh {
+    margin: 5px;
+}
+.block-money-off {
+    border-style: solid;
+    padding: 5px;
+    border-color:grey;
+    border-width: 1px;
+    color: #00E6E6;
+}
+.block-money-off:hover {
+    border-color:#00E6E6;
+    cursor: pointer;
+}
+.block-money-on {
+    border-style: solid;
+    padding: 5px;
+    border-color:#00E6E6;
+    border-width: 1px;
+    color: white;
+    background-color: #00E6E6;
+}
+.text-ex-change {
+    margin: 10px;
+}
+.check-boxs {
+    display: flex;
+    flex-direction: column;
+}
+.check-box {
+    margin: 5px;
+}
