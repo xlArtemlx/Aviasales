@@ -6,36 +6,38 @@ import {calcDate,calcStops}from '../utils/calcDate'
 import {useSelector} from 'react-redux'
 import{calcMoney} from '../utils/calcDate'
 
-export const Tickets = ({origin,originName,destination,destinationName,departureDate,departureTime,arrivalDate,arrivalTime,carrier,stops,price}) => {
+export const Tickets = ({origin,originName,destination,destinationName,departureDate,departureTime,arrivalDate,arrivalTime,carrier,stops,price,setModal}) => {
     const money = useSelector(({date})=>date.money)
+    const USD = useSelector(({date})=>date.USD)
+    const EUR = useSelector(({date})=>date.EUR)
     return (
         <div className='item'>
           <div className='buy'>
               <div className='img'>
                   <img className='label' src={label} alt='labels'/>
               </div>
-              <button className='price-button'>
-                  <text className='text-price'>Купить</text>
-                  <text className='text-price'>за {calcMoney(price,money)}</text>
+              <button className='price-button' onClick={()=>setModal(departureTime,calcDate(departureDate),arrivalTime,calcDate(arrivalDate),originName,destinationName)}>
+                  <span className='text-price'>Купить</span>
+                  <span className='text-price'>за {calcMoney(price,money,USD,EUR)}</span>
               </button>
           </div>
 
           <div className='info'>
               <div className='departure'>
-                  <text className='text-fly'>{departureTime}</text>
-                  <text className='text-city'>{origin},{originName}</text>
-                  <text className='text-date'>{calcDate(departureDate)}</text>
+                  <span className='text-fly'>{departureTime}</span>
+                  <span className='text-city'>{origin},{originName}</span>
+                  <span className='text-date'>{calcDate(departureDate)}</span>
               </div>
               <div className='stops'>
-                  <text>{calcStops(stops)}</text>
+                  <span>{calcStops(stops)}</span>
                   <div className='img'>
                     <img className='fly' src={fly}  alt='fly'></img>
                   </div>
               </div>
               <div className='arrival'>
-                <text className='text-fly'>{arrivalTime}</text>
-                <text className='text-city'>{destination},{destinationName}</text>
-                <text className='text-date'>{calcDate(arrivalDate)}</text>
+                <span className='text-fly'>{arrivalTime}</span>
+                <span className='text-city'>{destination},{destinationName}</span>
+                <span className='text-date'>{calcDate(arrivalDate)}</span>
               </div>
 
           </div>

@@ -69,6 +69,7 @@
 .text-date {
     font-size: 12px;
     color: grey;
+    width: 100px;
 }
 .fly {
     width: 100%;

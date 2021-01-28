@@ -3,3 +3,12 @@
     margin: 10px;
     display: flex;
 }
+.empty  {
+    width: 720px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.empty-text {
+    font-size: 28px;
+}

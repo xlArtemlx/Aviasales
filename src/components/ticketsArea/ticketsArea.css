@@ -1,6 +1,6 @@
 .area {
     margin: 0,auto;
-    width: 1000px;
+    width: 100%;
     flex-direction: column;
    
 }
@@ -14,4 +14,52 @@
     height: 500px;
     justify-content: center;
     display: flex;
+}
+.fly-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.fly-info-text {
+    font-size: 20px;
+    margin: 10px;
+    align-self: flex-start;
+    justify-content: space-between;
+}
+.form-label {
+    margin: 5px;
+}
+.form-input {
+    margin: 10px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.error-text {
+    font-size: 18px;
+    color:red;
+    height: 30px;
+}
+.form-button {
+    margin: 10px;
+    align-self: flex-start;
+}
+.form-button-box {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+}
+.success {
+
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+}
+.success-text {
+    font-size: 34px;
+    color: green;
 }

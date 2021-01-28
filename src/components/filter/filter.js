@@ -1,19 +1,28 @@
 import React from 'react'
 import './filter.css'
 import {useDispatch,useSelector} from 'react-redux'
-import{setMoneyTC} from '../Redux/Reducer/mainReducer'
+import{setMoneyTC,setViewTicketsTC} from '../Redux/Reducer/mainReducer'
 
 
 
 export const Filter = () => {
     const dispatch = useDispatch()
     const setMoney = useSelector(({date})=>date.money)
+    const viewTickets = useSelector(({date})=>date.viewTickets)
+
+
+    
+
+
+    const _handleFilterUpdate = (event,set:Number) => {
+        dispatch(setViewTicketsTC(set))
+    }
     return(
         <div>
             <div className='exChange'>
-                <text className='text-exCh'>
+                <span className='text-exCh'>
                     Валюта
-                </text>
+                </span>
                 <div className='text-ex-change'>
                     <button onClick={()=>{dispatch(setMoneyTC("RUB"))}} className={setMoney === 'RUB' ? 'block-money-on':'block-money-off'}>
                         RUB
@@ -27,63 +36,62 @@ export const Filter = () => {
                 </div>
             </div>
             <div className='check-boxs'>
-                <text>
+                <span>
                     Количество пересадок
-                </text>
+                </span>
                 <div>
                     <input
                         type="checkbox"
-                        checked={setMoney}
-                        onChange={()=>{}}
+                        id="first" name="first"
+                        checked={!!viewTickets.find( (value) => value === 1 )}
+                        onChange={(event: any)=>_handleFilterUpdate(event,1)}
                         className='check-box'
                     />
-                    <text>
+                    <label htmlFor='first'>
                         Все
-                    </text>
+                    </label>
                 </div>
                 <div>
                     <input
                         type="checkbox"
-                        checked={setMoney}
-                        onChange={()=>{}}
+                        id="second" name="second"
+                        checked={!!viewTickets.find( (value) => value === 2 )}
+                        onChange={(event: any)=>_handleFilterUpdate(event,2)}
                         className='check-box'
                     />
-                    <text>
+                    <label htmlFor='second'>
                         Без пересадок
-                    </text>
+                    </label>
                 </div>
                 <div>
                     <input
                         type="checkbox"
-                        checked={setMoney}
-                        onChange={()=>{}}
+                        id="third" name="third"
+                        checked={!!viewTickets.find( (value) => value === 3 )}
+                        onChange={(event: any)=>_handleFilterUpdate(event,3)}
                         className='check-box'
                     />
-                    <text>
-                        1 пересадка
-                    </text>
+                    <label htmlFor="third">  1 пересадка</label>
                 </div>
                 <div>
                     <input
                         type="checkbox"
-                        checked={setMoney}
-                        onChange={()=>{}}
+                        id="fourth" name="fourth"
+                        checked={!!viewTickets.find( (value) => value === 4 )}
+                        onChange={(event: any)=>_handleFilterUpdate(event,4)}
                         className='check-box'
                     />
-                    <text>
-                        2 пересадки
-                    </text>
+                    <label htmlFor="fourth">  2 пересадки</label>
                 </div>
                 <div>
                     <input
                         type="checkbox"
-                        checked={setMoney}
-                        onChange={()=>{}}
+                        id="fifth" name="fifth"
+                        checked={!!viewTickets.find( (value) => value === 5 )}
+                        onChange={(event: any)=>_handleFilterUpdate(event,5)}
                         className='check-box'
                     />
-                    <text>
-                        3 пересадки
-                    </text>
+                    <label htmlFor="fifth">  3 пересадки</label>
                 </div>
 
 
