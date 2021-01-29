@@ -89,8 +89,6 @@ export const setMoneyTC = (money) => async (dispatch,getState) => {
 }
 
 export const setViewTicketsTC = (viewTickets) => async (dispatch,getState) => {
-    let time =moment("12.05.18",'DD.MM.YYYY').format("ll")
-    console.log(time)
     const stateTickets = getState().date.viewTickets
     const isExist = !!stateTickets.find( (value) => value === viewTickets )
     
@@ -108,7 +106,7 @@ export const setViewTicketsTC = (viewTickets) => async (dispatch,getState) => {
         }
 
      }
-    //  12 мая 2018, Пт ll ddd
+   
 }
 
 

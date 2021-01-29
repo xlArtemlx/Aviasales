@@ -1,17 +1,19 @@
 import React from 'react'
 import './TicketsList.css'
-import {useSelector} from 'react-redux'
 import {Tickets} from '../tickets/Tickets'
 import './TicketsList.css'
+import xTickets from "./../xStore/xTickets";
+import xFilter from "../xStore/xFilter";
+import {observer} from 'mobx-react-lite'
 
-export const TicketsList = ({setModal}) => {
-    const tickets = useSelector(({date})=> date.tickets)
-    const viewTickets = useSelector(({date})=> date.viewTickets)
+export const TicketsList = observer(({setModal}) => {
+    const tickets:number[] = xTickets.tickets
+    const viewTickets:number[] = xFilter.stateTickets
 
     const renderList = () => {
 
         return(
-                    tickets.map((el,index)=>{
+             tickets.map((el,index)=>{
                         const view = !!viewTickets.find(element => element-2 === el.stops )
                         if(view){
                             return <Tickets 
@@ -51,4 +53,4 @@ export const TicketsList = ({setModal}) => {
             
         </div>
     )
-}
+})

@@ -1,17 +1,16 @@
 import React ,{useEffect,useState}from 'react'
-import {useDispatch} from 'react-redux'
 import {AppHeader} from '../appHeader/AppHeader'
 import './ticketsArea.css'
-import {setTicketsTC} from '../Redux/Reducer/mainReducer'
 import {TicketsList} from '../ticketsList/TicketsList' 
 import {Filter} from '../filter/filter'
 import { Modal} from '../modal/Modal'
 import validator from 'validator';
+import xTickets from "./../xStore/xTickets";
+import {observer} from 'mobx-react-lite'
 
 
 
-export const TicketsArea = () => {
-    const dispatch = useDispatch()
+export const TicketsArea = observer(() => {
     const[showModal,setShowModal]=useState(false)
     const[errorText,setErrorText]=useState(false)
     const[success,setSuccess]=useState(false)
@@ -41,7 +40,8 @@ export const TicketsArea = () => {
      })
 
     useEffect(()=>{
-        dispatch(setTicketsTC())
+        // dispatch(setTicketsTC())
+        xTickets.xSetTicketsTC()
     },[])
 
 
@@ -248,4 +248,4 @@ export const TicketsArea = () => {
            </div>
         </div>
     )
-}
+})

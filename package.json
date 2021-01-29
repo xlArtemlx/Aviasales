@@ -8,6 +8,8 @@
     "@testing-library/user-event": "^12.6.2",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
+    "mobx": "^6.1.1",
+    "mobx-react-lite": "^3.2.0",
     "moment": "^2.29.1",
     "node-sass": "^5.0.0",
     "react": "^17.0.1",

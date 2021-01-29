@@ -30,3 +30,59 @@
 .check-box {
     margin: 5px;
 }
+.check-boxs-button-one {
+    border: none;
+    color: white;
+
+}
+.input-one{
+    width: 200px;
+}
+.input-one:hover .check-boxs-button-one {
+    color: #00E6E6;
+}
+.check-boxs-button-two {
+    border: none;
+    color: white;
+
+}
+.input-two{
+    width: 200px;
+}
+.input-two:hover .check-boxs-button-two {
+    color: #00E6E6;
+}
+.check-boxs-button-three {
+    border: none;
+    color: white;
+
+}
+.input-three{
+    width: 200px;
+}
+.input-three:hover .check-boxs-button-three {
+    color: #00E6E6;
+}
+.check-boxs-button-four {
+    border: none;
+    color: white;
+
+}
+.input-four{
+    width: 200px;
+}
+.input-four:hover .check-boxs-button-four {
+    color: #00E6E6;
+}
+
+.check-boxs-button-five {
+    border: none;
+    color: white;
+
+}
+.input-five{
+    width: 200px;
+}
+.input-five:hover .check-boxs-button-five {
+    color: #00E6E6;
+}

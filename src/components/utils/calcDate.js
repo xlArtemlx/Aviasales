@@ -1,5 +1,5 @@
 import moment from "moment";
-export const calcDate = (str:String) => {
+export const calcDate = (str:String):String => {
     // let strYear:Number = Number(str.slice(6,8))
     //     let strMonth:Number = Number(str.slice(3,5))
     //     let strDay:Number = Number(str.slice(0,2))
@@ -70,7 +70,7 @@ export const calcDate = (str:String) => {
     //     }
 
     //     const newDate = `${strDay} ${monthYear} ${strYear +2000}, ${dayWeek} `
-        const newMomemt = ` ${moment(str,'DD.MM.YYYY').format("ll")},  ${moment("12.05.18",'DD.MM.YYYY').format("ddd")}`
+        const newMomemt = ` ${moment(str,'DD.MM.YYYY').format("ll")},  ${moment(str,'DD.MM.YYYY').format("ddd")}`
        return newMomemt
 
 }
@@ -87,7 +87,7 @@ export const calcMoney = (price:Number,money:String,USD:Number,EUR:Number) => {
 
     if(money === 'EUR'){
         return `${Math.floor(price * EUR)} EUR`
-    } else if(money==="USD"){
+    } else if(money === "USD"){
         return `${Math.floor(price * USD)} USD`
     } else {
         return `${price} RUB`

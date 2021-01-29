@@ -3,13 +3,14 @@ import './Tickets.css'
 import label from '../../images/label.png'
 import fly from '../../images/index.jpeg'
 import {calcDate,calcStops}from '../utils/calcDate'
-import {useSelector} from 'react-redux'
 import{calcMoney} from '../utils/calcDate'
+import  xMoney  from "../xStore/xMoney";
+import {observer} from 'mobx-react-lite'
 
-export const Tickets = ({origin,originName,destination,destinationName,departureDate,departureTime,arrivalDate,arrivalTime,carrier,stops,price,setModal}) => {
-    const money = useSelector(({date})=>date.money)
-    const USD = useSelector(({date})=>date.USD)
-    const EUR = useSelector(({date})=>date.EUR)
+export const Tickets = observer(({origin,originName,destination,destinationName,departureDate,departureTime,arrivalDate,arrivalTime,carrier,stops,price,setModal}) => {
+    const money = xMoney.money
+    const USD = xMoney.USD
+    const EUR = xMoney.EUR
     return (
         <div className='item'>
           <div className='buy'>
@@ -43,4 +44,4 @@ export const Tickets = ({origin,originName,destination,destinationName,departure
           </div>
         </div>
     )
-}
+})
